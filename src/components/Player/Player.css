@@ -1,0 +1,133 @@
+.c-player {
+  margin: 0px auto;
+  padding: 50px;
+}
+.c-player--date {
+  text-align: center;
+  color: #0f0f0f;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 5px;
+}
+
+.c-player--next {
+  text-align: center;
+  font-size: 18px;
+}
+
+.c-player > p span {
+  font-weight: 400;
+}
+
+.c-player--details .details-img {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.c-player--details .details-img img {
+  display: block;
+  margin: 0px auto 50px auto;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8),
+    -6px -6px 12px rgba(255, 255, 255, 0.4);
+}
+
+.c-player--details .details-title {
+  color: #0f0f0f;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.c-player--details .details-artist {
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.c-player--controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.c-player--controls .play-btn {
+  display: flex;
+  margin: 0 30px;
+  padding: 20px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: #0f0f0f;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.c-player--controls .skip-btn {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #888;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 760px) {
+  .c-player--next,
+  .c-player--date {
+    text-align: center;
+    font-size: 14px;
+    margin: 2px;
+  }
+  .c-player > h4 {
+    font-size: 16px;
+  }
+  .c-player--details .details-title {
+    font-size: 20px;
+  }
+  .c-player--details .details-artist {
+    font-size: 16px;
+  }
+}
+
+.details {
+  width: 100%;
+  border: 3px dashed #14a7f3;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+}
+
+h1 {
+  color: #14aff3;
+  font-size: 24px;
+}
+
+p {
+  text-align: justify;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: #14a7f3;
+}
+
+ul {
+  margin-left: 5px;
+}
+
+.latest {
+  font-size: 14px;
+  color: #14a7f3;
+  margin-top: 5px;
+
+  /* margin-left: 4px; */
+  /* border: 1px solid #f0f0f0; */
+}

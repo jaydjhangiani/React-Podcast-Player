@@ -1,0 +1,126 @@
+.podcast-epiode__container {
+  margin: 30px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 0.5em;
+}
+
+.podcast-episode__row-1,
+.podcast-episode__row-2,
+.podcast-episode__row-3 {
+  display: flex;
+  padding: 0.2em;
+}
+
+.podcast-episode__row-1 {
+  align-items: flex-start;
+}
+
+.podcast-episode__img-container {
+  width: 60%;
+}
+
+.podcast-episode__img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.podcast-episode__text-continer {
+  margin-left: 0.5em;
+  margin-top: 2px;
+}
+
+.podcast-episode__title {
+  text-align: left;
+  font-size: 1.5rem;
+  padding: 0rem 0.5rem;
+}
+
+.podcast-episode__description-lgScreen {
+  display: flex;
+  margin-top: 1rem;
+  padding: 0rem 0.5rem;
+  text-align: justify;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.podcast-episode__description {
+  display: none;
+}
+
+.podcast-episode__row-3 {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2em 1em;
+}
+
+.podcast-episode__duration {
+  font-weight: 300;
+  opacity: 0.9;
+  font-size: 0.8rem;
+}
+
+.podcast-episode__button {
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  background-color: white;
+  border: 2px solid whitesmoke;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.podcast-episode__button {
+  transition: all 0.2s ease-in-out;
+  background-color: whitesmoke;
+  border: 2px solid #0f0f0f;
+}
+
+@media (max-width: 600px) {
+  .podcast-episode__row-1 {
+    align-items: center;
+  }
+
+  .podcast-episode__img-container {
+    width: 25%;
+  }
+
+  .podcast-episode__img {
+    border-radius: 10px;
+  }
+
+  .podcast-episode__text-continer {
+    width: 100%;
+  }
+
+  .podcast-episode__title {
+    font-size: 0.8rem;
+  }
+
+  .podcast-episode__description {
+    display: flex;
+    font-weight: 300;
+    font-size: 0.8rem;
+    text-align: justify;
+    opacity: 0.8;
+  }
+
+  .podcast-episode__description-lgScreen {
+    display: none;
+  }
+
+  .podcast-episode__row-3 {
+    padding: 0.2em 0.2em;
+  }
+}
