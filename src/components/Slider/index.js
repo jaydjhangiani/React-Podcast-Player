@@ -22,11 +22,10 @@ const Slider = ({ onChange, percentage }) => {
     setProgressBarWidth(centerProgressBar);
   }, [percentage]);
 
-  // console.log(percentage)
   return (
-    <div className="slider-container">
+    <div className="slider__container">
       <div
-        className="progress-bar-cover"
+        className="slider__progress-bar-cover"
         style={{
           width: `${progressBarWidth}px`,
         }}

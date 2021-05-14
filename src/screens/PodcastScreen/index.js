@@ -23,11 +23,12 @@ const PodcastScreen = () => {
       {!episodes ? (
         <Loader />
       ) : (
-        <div className="podcast__dock">
-          <div className="player-wrapper">
+        <div className="podcast-screen__container">
+          <div className="podcast-screen__player-container">
             <Player
               currentSongIndex={currentSongIndex}
               setCurrentSongIndex={setCurrentSongIndex}
+              setNextSongIndex={setNextSongIndex}
               nextSongIndex={nextSongIndex}
               episodes={episodes}
             />
@@ -38,7 +39,10 @@ const PodcastScreen = () => {
                 key={index}
                 index={index}
                 data={episode}
+                length={episodes.length}
+                nextSongIndex={index + 1 > episodes.length - 1 ? 0 : index + 1}
                 setCurrentSongIndex={setCurrentSongIndex}
+                setNextSongIndex={setNextSongIndex}
               />
             ))}
           </div>

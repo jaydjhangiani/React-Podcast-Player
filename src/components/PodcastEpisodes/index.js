@@ -3,13 +3,19 @@ import parse from "html-react-parser";
 import "./PodcastEpisode.css";
 import { formatDate } from "../../utils/fomatDate";
 import { BsFillPlayFill } from "react-icons/bs";
-import { useHistory } from "react-router-dom";
 
-const PodcastEpisode = ({ data, index, setCurrentSongIndex }) => {
-  const history = useHistory();
+const PodcastEpisode = ({
+  data,
+  index,
+  setCurrentSongIndex,
+  setNextSongIndex,
+  nextSongIndex,
+  length,
+}) => {
   const handleEpisode = (e) => {
     e.preventDefault();
     setCurrentSongIndex(index);
+    setNextSongIndex(nextSongIndex);
   };
 
   return (

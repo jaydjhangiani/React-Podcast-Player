@@ -1,8 +1,9 @@
-.c-player {
+.player {
   margin: 0px auto;
   padding: 50px;
 }
-.c-player--date {
+
+.player__date {
   text-align: center;
   color: #0f0f0f;
   font-weight: 600;
@@ -10,53 +11,48 @@
   margin: 5px;
 }
 
-.c-player--next {
+.player__next-details {
   text-align: center;
   font-size: 18px;
 }
 
-.c-player > p span {
-  font-weight: 400;
-}
-
-.c-player--details .details-img {
+.player-details__img {
   position: relative;
   width: fit-content;
   margin: 0 auto;
 }
 
-.c-player--details .details-img img {
+.player-details__img img {
   display: block;
   margin: 0px auto 50px auto;
   width: 100%;
   max-width: 250px;
   border-radius: 10px;
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8),
-    -6px -6px 12px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.c-player--details .details-title {
+.player-details__title {
   color: #0f0f0f;
   font-size: 28px;
   text-align: center;
   margin-bottom: 10px;
 }
 
-.c-player--details .details-artist {
+.player-details__author {
   color: black;
   font-size: 20px;
   text-align: center;
   margin-bottom: 20px;
 }
 
-.c-player--controls {
+.player-controls {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
 }
 
-.c-player--controls .play-btn {
+.player-controls__play-btn {
   display: flex;
   margin: 0 30px;
   padding: 20px;
@@ -69,7 +65,7 @@
   cursor: pointer;
 }
 
-.c-player--controls .skip-btn {
+.player-controls__skip-btn {
   background: none;
   border: none;
   outline: none;
@@ -78,56 +74,31 @@
   font-size: 18px;
 }
 
+.player__duration {
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.player__timer {
+  display: flex;
+  font-size: 15px;
+  font-weight: 200;
+  color: rgb(196, 196, 196);
+}
+
 @media only screen and (max-width: 760px) {
-  .c-player--next,
-  .c-player--date {
+  .player__next-details,
+  .player__date {
     text-align: center;
     font-size: 14px;
     margin: 2px;
   }
-  .c-player > h4 {
-    font-size: 16px;
-  }
-  .c-player--details .details-title {
+
+  .player-details__title {
     font-size: 20px;
   }
-  .c-player--details .details-artist {
+  .player-details__author {
     font-size: 16px;
   }
-}
-
-.details {
-  width: 100%;
-  border: 3px dashed #14a7f3;
-  border-radius: 10px;
-  padding: 15px;
-  margin: 10px;
-}
-
-h1 {
-  color: #14aff3;
-  font-size: 24px;
-}
-
-p {
-  text-align: justify;
-  font-size: 14px;
-}
-
-a {
-  text-decoration: none;
-  color: #14a7f3;
-}
-
-ul {
-  margin-left: 5px;
-}
-
-.latest {
-  font-size: 14px;
-  color: #14a7f3;
-  margin-top: 5px;
-
-  /* margin-left: 4px; */
-  /* border: 1px solid #f0f0f0; */
 }

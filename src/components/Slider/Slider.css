@@ -1,8 +1,8 @@
-.slider-container {
+.slider__container {
   --progress-bar-height: 8px;
 }
 
-.slider-container {
+.slider__container {
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -10,7 +10,7 @@
 }
 
 /* Background */
-.slider-container::before {
+.slider__container::before {
   content: "";
   background-color: #f0f0f0;
   width: 99%;
@@ -25,7 +25,7 @@
 }
 
 /* Custom Progress Bar */
-.progress-bar-cover {
+.slider__progress-bar-cover {
   background-color: #212121;
   opacity: 0.6;
   width: 20%;
@@ -49,25 +49,4 @@
   cursor: pointer;
   opacity: 0;
   margin: 0 auto;
-}
-
-.control-panel {
-  padding: 10px 0px;
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: space-between;
-}
-
-.timer {
-  display: flex;
-  font-size: 15px;
-  font-weight: 200;
-  color: rgb(196, 196, 196);
-}
-
-@media only screen and (max-width: 760px) {
-  .slider-container {
-    position: relative;
-    width: 250px;
-  }
 }

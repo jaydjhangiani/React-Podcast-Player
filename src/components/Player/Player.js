@@ -10,6 +10,7 @@ import "./Player.css";
 const Player = ({
   currentSongIndex,
   setCurrentSongIndex,
+  setNextSongIndex,
   nextSongIndex,
   episodes,
 }) => {
@@ -49,19 +50,35 @@ const Player = ({
       setCurrentSongIndex(() => {
         let temp = currentSongIndex;
         temp++;
-        console.log(temp);
         if (temp > episodes.length - 1) {
           temp = 0;
         }
-
+        return temp;
+      });
+      setNextSongIndex(() => {
+        let temp = nextSongIndex;
+        temp++;
+        if (temp > episodes.length - 2) {
+          temp = 0;
+          // console.log('forward')
+        }
+        //console.log(temp)
         return temp;
       });
     } else {
       setCurrentSongIndex(() => {
         let temp = currentSongIndex;
         temp--;
-
         if (temp < 0) {
+          temp = episodes.length - 1;
+        }
+        return temp;
+      });
+      setNextSongIndex(() => {
+        let temp = nextSongIndex;
+        temp--;
+
+        if (temp < -1) {
           temp = episodes.length - 1;
         }
         return temp;
@@ -71,12 +88,11 @@ const Player = ({
 
   return (
     <div>
-      <div className="c-player">
+      <div className="player">
         {!episodes ? (
           <Loader />
         ) : (
           <div>
-            {/* <h4>Playing Now</h4> */}
             <div>
               <audio
                 ref={audioEl}
@@ -88,19 +104,19 @@ const Player = ({
               ></audio>
               <PlayerDetails episode={episodes[currentSongIndex]} />
               <Slider onChange={onChange} percentage={percentage} />
-              <div className="control-panel">
-                <div className="timer">{secondsToHms(currentTime)}</div>
-                <div className="timer">{secondsToHms(duration)}</div>
+              <div className="player__duration">
+                <div className="player__timer">{secondsToHms(currentTime)}</div>
+                <div className="player__timer">{secondsToHms(duration)}</div>
               </div>
               <PlayerControls
                 isPlaying={isPlaying}
                 setIsPlaying={setIsPlaying}
                 SkipSong={SkipSong}
               />
-              <p className="c-player--date">
+              <p className="player__date">
                 {formatDate(episodes[currentSongIndex].pubDate)}
               </p>
-              <p className="c-player--next">
+              <p className="player__next-details">
                 <strong>Next up: </strong>
                 {episodes[nextSongIndex].title}
               </p>

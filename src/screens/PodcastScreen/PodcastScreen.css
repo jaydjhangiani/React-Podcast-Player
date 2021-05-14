@@ -1,11 +1,11 @@
-.podcast__dock {
+.podcast-screen__container {
   display: flex;
   padding: 20px 40px;
   justify-content: space-between;
   height: 100vh;
 }
 
-.player-wrapper {
+.podcast-screen__player-container {
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   height: 100%;
@@ -23,13 +23,13 @@
 }
 
 @media only screen and (max-width: 760px) {
-  .podcast__dock {
+  .podcast-screen__container {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
   }
 
-  .player-wrapper {
+  .podcast-screen__player-container {
     width: 100%;
     margin: 0 auto;
     margin-bottom: 15px;
