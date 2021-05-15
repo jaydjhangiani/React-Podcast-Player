@@ -11,6 +11,10 @@
   padding: 0.5em;
 }
 
+.podcast-epiode__current-container {
+  border: 3px dashed #000;
+}
+
 .podcast-episode__row-1,
 .podcast-episode__row-2,
 .podcast-episode__row-3 {
@@ -88,6 +92,9 @@
 }
 
 @media (max-width: 600px) {
+  .podcast-epiode__container {
+    margin: 15px auto;
+  }
   .podcast-episode__row-1 {
     align-items: center;
   }

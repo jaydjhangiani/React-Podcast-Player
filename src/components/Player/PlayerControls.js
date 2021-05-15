@@ -1,26 +1,23 @@
 import React from "react";
-import { BsPlayFill } from "react-icons/bs";
+import { BsPlayFill, BsPauseFill } from "react-icons/bs";
 import { FaBackward, FaForward } from "react-icons/fa";
 
-function PlayerControls(props) {
+function PlayerControls({ SkipSong, setIsPlaying, isPlaying }) {
   return (
     <div className="player-controls">
       <button
         className="player-controls__skip-btn"
-        onClick={() => props.SkipSong(false)}
+        onClick={() => SkipSong(false)}
       >
         <FaBackward />
       </button>
       <button
         className="player-controls__play-btn"
-        onClick={() => props.setIsPlaying(!props.isPlaying)}
+        onClick={() => setIsPlaying(!isPlaying)}
       >
-        <BsPlayFill />
+        {isPlaying ? <BsPauseFill /> : <BsPlayFill />}
       </button>
-      <button
-        className="player-controls__skip-btn"
-        onClick={() => props.SkipSong()}
-      >
+      <button className="player-controls__skip-btn" onClick={() => SkipSong()}>
         <FaForward />
       </button>
     </div>

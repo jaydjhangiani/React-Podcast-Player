@@ -1,6 +1,6 @@
 .player {
   margin: 0px auto;
-  padding: 50px;
+  padding: 20px 50px;
 }
 
 .player__date {
@@ -14,6 +14,22 @@
 .player__next-details {
   text-align: center;
   font-size: 18px;
+}
+
+.player__share {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.player-share__container {
+  display: flex;
+  margin-top: 15px;
+  text-align: center;
+  justify-content: center;
+}
+
+.player-share__icon {
+  margin-right: 5px !important;
 }
 
 .player-details__img {
@@ -96,9 +112,18 @@
   }
 
   .player-details__title {
-    font-size: 20px;
+    font-size: 18px;
   }
   .player-details__author {
     font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .player-details__title {
+    font-size: 16px;
+  }
+  .player-details__author {
+    font-size: 12px;
   }
 }

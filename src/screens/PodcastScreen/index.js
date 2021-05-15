@@ -10,6 +10,7 @@ const PodcastScreen = () => {
   const [episodes, setEpisodes] = useState(null);
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
+  const [currentEpisode, setCurrentEpisode] = useState(0);
   useEffect(() => {
     fetch(xml)
       .then((res) => res.json())
@@ -30,6 +31,7 @@ const PodcastScreen = () => {
               setCurrentSongIndex={setCurrentSongIndex}
               setNextSongIndex={setNextSongIndex}
               nextSongIndex={nextSongIndex}
+              setCurrentEpisode={setCurrentEpisode}
               episodes={episodes}
             />
           </div>
@@ -40,8 +42,10 @@ const PodcastScreen = () => {
                 index={index}
                 data={episode}
                 length={episodes.length}
+                isPlaying={currentEpisode === index ? true : false}
                 nextSongIndex={index + 1 > episodes.length - 1 ? 0 : index + 1}
                 setCurrentSongIndex={setCurrentSongIndex}
+                setCurrentEpisode={setCurrentEpisode}
                 setNextSongIndex={setNextSongIndex}
               />
             ))}

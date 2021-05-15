@@ -1,7 +1,6 @@
 import React from "react";
 
 function PlayerDetails({ episode }) {
-  console.log(episode);
   return (
     <div className="player-details">
       <div className="player-details__img">

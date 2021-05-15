@@ -6,10 +6,12 @@ import PlayerControls from "./PlayerControls";
 import { formatDate } from "../../utils/fomatDate";
 import Slider from "../Slider";
 import "./Player.css";
+import PlayerShare from "./PlayerShare";
 
 const Player = ({
   currentSongIndex,
   setCurrentSongIndex,
+  setCurrentEpisode,
   setNextSongIndex,
   nextSongIndex,
   episodes,
@@ -60,9 +62,15 @@ const Player = ({
         temp++;
         if (temp > episodes.length - 2) {
           temp = 0;
-          // console.log('forward')
         }
-        //console.log(temp)
+        return temp;
+      });
+      setCurrentEpisode(() => {
+        let temp = currentSongIndex;
+        temp++;
+        if (temp > episodes.length - 1) {
+          temp = 0;
+        }
         return temp;
       });
     } else {
@@ -74,6 +82,15 @@ const Player = ({
         }
         return temp;
       });
+      setCurrentEpisode(() => {
+        let temp = currentSongIndex;
+        temp--;
+        if (temp < 0) {
+          temp = episodes.length - 1;
+        }
+        return temp;
+      });
+      console.log(nextSongIndex--);
       setNextSongIndex(() => {
         let temp = nextSongIndex;
         temp--;
@@ -118,8 +135,13 @@ const Player = ({
               </p>
               <p className="player__next-details">
                 <strong>Next up: </strong>
-                {episodes[nextSongIndex].title}
+                {episodes[nextSongIndex]?.title}
               </p>
+              <h3 className="player__share">Share this podcast</h3>
+              <PlayerShare
+                author={episodes[currentSongIndex].author}
+                title={episodes[currentSongIndex].title}
+              />
             </div>
           </div>
         )}

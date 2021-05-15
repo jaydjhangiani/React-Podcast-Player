@@ -9,17 +9,23 @@ const PodcastEpisode = ({
   index,
   setCurrentSongIndex,
   setNextSongIndex,
+  setCurrentEpisode,
   nextSongIndex,
-  length,
+  isPlaying,
 }) => {
   const handleEpisode = (e) => {
     e.preventDefault();
     setCurrentSongIndex(index);
+    setCurrentEpisode(index);
     setNextSongIndex(nextSongIndex);
   };
 
   return (
-    <div className="podcast-epiode__container">
+    <div
+      className={`podcast-epiode__container ${
+        isPlaying ? `podcast-epiode__current-container` : null
+      }`}
+    >
       <div className="podcast-episode__row-1">
         <div className="podcast-episode__img-container">
           <img className="podcast-episode__img" src={data?.thumbnail} alt="" />
